@@ -1,0 +1,17 @@
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @band.name %>
+    </p>
+  </div>
+  <div class="extra content">
+    <%= link_to 'Edit Band', edit_band_path(@band) %> |
+    <%= link_to 'Back', bands_path %> | 
+    <%= link_to "Delete #{@band.name}", band_path(@band), method: :delete %>
+  </div>
+</div>
+<ul>
+  <% @band.tunes.each do |tune| %>
+    <li><%= link_to "#{tune.name}", band_tune_path(@band, tune) %></li>
+  <% end %>
+</ul>

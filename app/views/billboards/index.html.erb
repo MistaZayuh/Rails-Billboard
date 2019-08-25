@@ -1,0 +1,11 @@
+<h1 class="ui header">All Billboards</h1>
+
+<% @billboards.each do |billboard| %>
+  <h3><%= billboard.name %></h3>
+  <%= link_to "Show", billboard_path(billboard), class: "ui blue inverted button" %>
+  <%= link_to "Edit", edit_billboard_path(billboard), class: "ui green inverted button" %>
+  <%= link_to "Delete", billboard_path(billboard), class: "ui red inverted button", method: :delete %>
+<% end %>
+<br />
+
+

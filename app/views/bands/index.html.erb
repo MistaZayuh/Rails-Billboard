@@ -1,0 +1,11 @@
+<h1 class="ui header">All Bands</h1>
+
+<% @bands.each do |band| %>
+  <h3><%= band.name %></h3>
+  <%= link_to "Show", band_path(band), class: "ui blue inverted button" %>
+  <%= link_to "Edit", edit_band_path(band), class: "ui green inverted button" %>
+  <%= link_to "Delete", band_path(band), class: "ui red inverted button", method: :delete %>
+<% end %>
+<br />
+<%= link_to "New Band", new_band_path %>
+

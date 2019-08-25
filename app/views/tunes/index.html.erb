@@ -1,0 +1,7 @@
+<h1>Click a Song To View It</h1>
+<%= link_to 'Add Song', new_band_tune_path(@band) %>
+<ul>
+  <% @band.tunes.each do |tune| %>
+    <li><%= link_to tune.name, [@band, tune] %></li>
+  <% end %>
+</ul>
