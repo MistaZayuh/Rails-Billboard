@@ -1,2 +1,7 @@
-<h1>Bands#new</h1>
-<p>Find me in app/views/bands/new.html.erb</p>
+<p class="ui header">New Band</p>
+<hr />
+
+<%= render "form", band: @band %>
+
+
+<%= link_to "Back", bands_path, class: "ui green inverted button" %>
