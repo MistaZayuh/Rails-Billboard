@@ -1,2 +1,20 @@
-<h1>Billboards#show</h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<h1 class="ui header"><%= "#{@billboard.name}" %></h1>
+  <% $i = 0 %>
+<ol class="ui relaxed divided list">
+  <% @billboard.tunes.each do |tune| %>
+  <% if $i == 50 %>
+  <% break %>
+  <% end %>
+    <% @band = Band.find(tune.band_id) %>
+    <div class="item">
+      <div class="content">
+        <li class="header"><%= link_to "#{tune.name}", band_tune_path(@band, tune) %></a>
+      </div>
+    </div>
+    <% ($i += 1) %>
+  <% end %>
+</ol>
+<%= link_to 'Edit Billboard', edit_billboard_path %> |
+<%= link_to 'Back', billboards_path %> | 
+<%= link_to "Delete Billboard", billboard_path, method: :delete %>
+

@@ -1,1 +1,17 @@
-<p>Show tune page</p>
+<h1 class="header"><%= @tune.name %> - <%= @band.name %> </h1>
+<h3><%= @tune.genre %></h3>
+<% if @tune.billboard_id %>
+<% @billboard = Billboard.find(@tune[:billboard_id]) %>
+<h4><%= link_to "Currently on #{@billboard.name}", billboard_path(@billboard) %></h4>
+<% end %>
+<hr />
+<%# <h2>Add Song to Billboard</h2> %>
+<%# form_with(model: [@band, @tune], local: true, class: "ui form") do |f| %>
+  <%# f.label :billboard %>
+  <%# f.collection_select :billboard_id, Billboard.order(:name), :id, :name, include_blank: true %>
+  <%# f.submit %>
+  <%# @tune.billboard_id = params[:billboard][:id]%>
+<%# end %>
+<%= link_to 'Edit Song', edit_band_tune_path(@band, @tune) %>
+<br />
+<%= link_to 'Back', band_path(@band) %>

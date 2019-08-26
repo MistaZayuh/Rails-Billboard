@@ -15,3 +15,4 @@
     <li><%= link_to "#{tune.name}", band_tune_path(@band, tune) %></li>
   <% end %>
 </ul>
+<%= link_to 'Add Song', new_band_tune_path(@band) %>
